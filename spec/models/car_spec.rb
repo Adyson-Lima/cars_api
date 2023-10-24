@@ -26,6 +26,11 @@ RSpec.describe Car, type: :model do
       expect(@car).to be_valid 
     end
     
+    it 'Car invalido com campos obrigatorios em branco?' do
+      car = Car.new
+      expect(car).to be_valid
+    end
+    
   end
   
 end
