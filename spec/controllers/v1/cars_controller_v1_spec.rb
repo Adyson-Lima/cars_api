@@ -29,4 +29,14 @@ RSpec.describe Api::V1::CarsController, type: :controller do
     end
   end
   
+  describe 'PATCH /api/v1/cars/id' do
+    it 'Consegue atualizar um car e retornar status 200?' do
+      car = Car.last
+      patch :update, params: {car: {name: "kombi", age: "1980"},id: car.id}
+      
+      expect(response.body).to include_json(name: "kombi")
+      expect(response).to have_http_status(200)
+    end
+  end
+  
 end
