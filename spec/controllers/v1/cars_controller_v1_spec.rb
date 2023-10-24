@@ -39,4 +39,14 @@ RSpec.describe Api::V1::CarsController, type: :controller do
     end
   end
   
+  describe 'DELETE /api/v1/cars/id' do
+    it 'Consegue apagar um car e retornar 204?' do
+      car = Car.last
+      delete :destroy, params: {id: car.id}
+      
+      expect(Car.all).not_to include(car)
+      expect(response).to have_http_status(204)
+    end
+  end
+  
 end
