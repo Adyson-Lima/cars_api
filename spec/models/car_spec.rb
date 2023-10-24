@@ -28,7 +28,7 @@ RSpec.describe Car, type: :model do
     
     it 'Car invalido com campos obrigatorios em branco?' do
       car = Car.new
-      expect(car).to be_valid
+      expect(car).to be_invalid
     end
     
   end
