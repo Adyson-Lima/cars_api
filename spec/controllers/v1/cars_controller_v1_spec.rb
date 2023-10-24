@@ -20,4 +20,13 @@ RSpec.describe Api::V1::CarsController, type: :controller do
     end
   end
   
+  describe 'POST /api/v1/cars' do
+    it 'Consegue criar um car e retornar status 201?' do
+      post :create, params: {car: {name: @car.name, age: @car.age},format: :json}
+      
+      expect(response.body).to include_json(name: @car.name)
+      expect(response).to have_http_status(201)
+    end
+  end
+  
 end
