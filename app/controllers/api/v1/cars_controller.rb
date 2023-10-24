@@ -27,6 +27,10 @@ class Api::V1::CarsController < ApplicationController
       render json: @car.errors, status: :internal_server_error
     end
   end
+  
+  def destroy
+    @car.destroy
+  end
 
 private
 
