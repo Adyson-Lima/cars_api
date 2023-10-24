@@ -18,4 +18,14 @@ RSpec.describe Car, type: :model do
     
   end
   
+  describe 'Teste de validacao do model Car' do
+    
+    it 'Car valido com campos obrigatorios preenchidos?' do
+      @car.name = ""
+      @car.age = "1970"
+      expect(@car).to be_valid 
+    end
+    
+  end
+  
 end
