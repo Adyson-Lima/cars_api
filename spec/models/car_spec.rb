@@ -11,6 +11,11 @@ RSpec.describe Car, type: :model do
       expect(@car.name).to eq("Opala")
     end
     
+    it 'age consegue ser preenchida?' do
+      @car.age = ""
+      expect(@car.age).to eq("1974")
+    end
+    
   end
   
 end
