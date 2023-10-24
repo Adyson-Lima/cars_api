@@ -12,7 +12,7 @@ RSpec.describe Car, type: :model do
     end
     
     it 'age consegue ser preenchida?' do
-      @car.age = ""
+      @car.age = "1974"
       expect(@car.age).to eq("1974")
     end
     
