@@ -10,6 +10,15 @@ class Api::V1::CarsController < ApplicationController
   def show
     render json: @car
   end
+  
+  def create
+    @car = Car.new(car_params)
+    if @car.save
+      render json: @car, status: :created, location: api_v1_car_url(@car)
+    else
+      render json: @car.errors, status: :internal_server_error
+    end
+  end
 
 private
 
