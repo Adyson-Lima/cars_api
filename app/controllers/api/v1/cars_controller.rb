@@ -6,6 +6,10 @@ class Api::V1::CarsController < ApplicationController
     @cars = Car.all
     render json: @cars
   end
+  
+  def show
+    render json: @car
+  end
 
 private
 
