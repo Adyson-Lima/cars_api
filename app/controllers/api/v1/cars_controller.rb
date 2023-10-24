@@ -19,6 +19,14 @@ class Api::V1::CarsController < ApplicationController
       render json: @car.errors, status: :internal_server_error
     end
   end
+  
+  def update
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: @car.errors, status: :internal_server_error
+    end
+  end
 
 private
 
